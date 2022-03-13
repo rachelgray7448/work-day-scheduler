@@ -1,18 +1,26 @@
 var currentDay = $("#currentDay").text(moment().format("MMMM Do YYYY"));
-var currentTime = moment().format("LT");
+var now = moment();
+var currentTime = now.hour();
+
+console.log(currentTime)
+
 
 
 // function for time blocks
 
 timeBlocks = function () {
     $("#10").val(localStorage.getItem("10"));
-    //if (time)
     for (let i = 0; i < $(".time-block").length; i++) {
         var time = ($(".time-block")[i].id.split("-")[1])
         if (time < currentTime) {
-            
+            $(".time-block")[i].addClass("past");
         }
-        
+        else if (time == currentTime) {
+            $(".time-block")[i].addClass("present");
+        }
+        else {
+            $(".time-block")[i].addClass("future");
+        }   
     }
 }
 
