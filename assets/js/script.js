@@ -13,18 +13,16 @@ timeBlocks = function () {
     for (let i = 0; i < $(".time-block").length; i++) {
         var time = ($(".time-block")[i].id.split("-")[1])
         if (time < currentTime) {
-            $(".time-block")[i].addClass("past");
+            $(".time-block")[i].classList.add("past");
         }
         else if (time == currentTime) {
-            $(".time-block")[i].addClass("present");
+            $(".time-block")[i].classList.add("present");
         }
         else {
-            $(".time-block")[i].addClass("future");
+            $(".time-block")[i].classList.add("future");
         }   
     }
 }
-
-
 
 // function for save button
 $(".saveBtn").click(function() {
@@ -32,6 +30,5 @@ $(".saveBtn").click(function() {
     localStorage.setItem($(this)[0].previousElementSibling.id, $(this)[0].previousElementSibling.value.trim());
   });
 
-
-
+  1
 timeBlocks();
