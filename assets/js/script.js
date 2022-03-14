@@ -2,10 +2,6 @@ var currentDay = $("#currentDay").text(moment().format("MMMM Do YYYY"));
 var now = moment();
 var currentTime = now.hour();
 
-console.log(currentTime)
-
-
-
 // function for time blocks
 
 timeBlocks = function () {
